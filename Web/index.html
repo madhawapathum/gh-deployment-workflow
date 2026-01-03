@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>root@portfolio:~/</title>
+
+    <!-- Google Fonts: JetBrains Mono (coding font) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="terminal-window">
+        <!-- Terminal Header (Traffic Lights) -->
+        <div class="terminal-header">
+            <div class="buttons">
+                <span class="btn btn-red"></span>
+                <span class="btn btn-yellow"></span>
+                <span class="btn btn-green"></span>
+            </div>
+            <div class="title">user@devops-portfolio: ~</div>
+        </div>
+
+        <!-- Terminal Body -->
+        <div class="terminal-body">
+
+            <!-- Navbar as commands -->
+            <nav class="command-nav">
+                <span class="comment"># Navigation (Click to execute)</span>
+                <div class="nav-links">
+                    <a href="#home" class="cmd-link" data-cmd="./home.sh">./home.sh</a>
+                    <a href="#about" class="cmd-link" data-cmd="cat about.txt">about.txt</a>
+                    <a href="#skills" class="cmd-link" data-cmd="ls -la skills/">skills/</a>
+                    <a href="#projects" class="cmd-link" data-cmd="./show_projects.py">projects.py</a>
+                    <a href="#contact" class="cmd-link" data-cmd="ssh contact@me">ssh contact</a>
+                </div>
+            </nav>
+
+            <div class="output-area">
+
+                <!-- Section: Home -->
+                <section id="home" class="active-section">
+                    <div class="prompt-line">
+                        <span class="user">user@devops:~$</span> <span class="command">./home.sh</span>
+                    </div>
+                    <div class="command-output">
+                        <pre class="ascii-art">
+  _    _      _ _       
+ | |  | |    | | |      
+ | |__| | ___| | | ___  
+ |  __  |/ _ \ | |/ _ \ 
+ | |  | |  __/ | | (_) |
+ |_|  |_|\___|_|_|\___/ 
+                        </pre>
+                        <h1>DEVOPS ENGINEER & LINUX ENTHUSIAST</h1>
+                        <p class="status">System Status: <span class="online">ONLINE</span></p>
+                        <p>Automating the world, one script at a time.</p>
+                        <br>
+                        <p>Type <span class="highlight">help</span> or click menu items to navigate.</p>
+                    </div>
+                </section>
+
+                <!-- Section: About -->
+                <section id="about" class="hidden-section">
+                    <div class="prompt-line">
+                        <span class="user">user@devops:~$</span> <span class="command">cat about.txt</span>
+                    </div>
+                    <div class="command-output">
+                        <p>> Loading user profile...</p>
+                        <br>
+                        <div class="kv-pair"><span class="key">Name:</span> <span class="value">Madhawa Pathum</span></div>
+                        <div class="kv-pair"><span class="key">Role:</span> <span class="value">DevOps Engineer</span>
+                        </div>
+                        <div class="kv-pair"><span class="key">Location:</span> <span class="value">Earth
+                                (127.0.0.1)</span></div>
+                        <div class="kv-pair"><span class="key">Uptime:</span> <span class="value">3 Years</span></div>
+                        <div class="kv-pair"><span class="key">Bio:</span> <span class="value">Passionate about CI/CD
+                                pipelines, cloud infrastructure, and linux kernel. I turn complex deployments into
+                                one-click wonders.</span></div>
+                    </div>
+                </section>
+
+                <!-- Section: Skills -->
+                <section id="skills" class="hidden-section">
+                    <div class="prompt-line">
+                        <span class="user">user@devops:~$</span> <span class="command">ls -la skills/</span>
+                    </div>
+                    <div class="command-output">
+                        <div class="file-grid">
+                            <span class="file executable"><i class="fa-brands fa-docker"></i> Docker</span>
+                            <span class="file executable"><i class="fa-brands fa-aws"></i> AWS</span>
+                            <span class="file executable"><i class="fa-brands fa-linux"></i> Linux</span>
+                            <span class="file script"><i class="fa-brands fa-jenkins"></i> Jenkins</span>
+                            <span class="file script"><i class="fa-brands fa-python"></i> Python</span>
+                            <span class="file text"><i class="fa-solid fa-terminal"></i> Bash</span>
+                            <span class="file config"><i class="fa-solid fa-code-branch"></i> Git</span>
+                            <span class="file config"><i class="fa-solid fa-cubes"></i> Kubernetes</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Projects -->
+                <section id="projects" class="hidden-section">
+                    <div class="prompt-line">
+                        <span class="user">user@devops:~$</span> <span class="command">./show_projects.py</span>
+                    </div>
+                    <div class="command-output">
+                        <p>> Fetching repositories...</p>
+                        <br>
+                        <div class="project-list">
+                            <div class="project-item">
+                                <span class="timestamp">[2023-10-12]</span>
+                                <a href="#" class="project-name">gh-deployment-workflow/</a> -
+                                <span class="project-desc">Automated GitHub Pages deployment using Actions.</span>
+                            </div>
+                            <div class="project-item">
+                                <span class="timestamp">[2023-08-05]</span>
+                                <a href="#" class="project-name">docker-swarm-cluster/</a> -
+                                <span class="project-desc">High availability cluster setup on AWS EC2.</span>
+                            </div>
+                            <div class="project-item">
+                                <span class="timestamp">[2023-05-20]</span>
+                                <a href="#" class="project-name">monitor-dashboard/</a> -
+                                <span class="project-desc">Real-time server monitoring with Prometheus & Grafana.</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Contact -->
+                <section id="contact" class="hidden-section">
+                    <div class="prompt-line">
+                        <span class="user">user@devops:~$</span> <span class="command">ssh contact@me</span>
+                    </div>
+                    <div class="command-output">
+                        <p>> Establishing connection...</p>
+                        <p>> Connection successful.</p>
+                        <br>
+                        <form class="terminal-form">
+                            <div class="input-group">
+                                <label for="email">email:</label>
+                                <input type="email" id="email" placeholder="_" autocomplete="off">
+                            </div>
+                            <div class="input-group">
+                                <label for="message">message:</label>
+                                <textarea id="message" rows="1" placeholder="_"></textarea>
+                            </div>
+                            <p class="form-hint">[Press Enter to Send]</p>
+                        </form>
+                        <br>
+                        <div class="socials">
+                            <p>Or find me at:</p>
+                            <a href="#">github.com/pathum</a>
+                            <a href="#">linkedin.com/in/pathum</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Interactive Input Line (Always at bottom) -->
+                <div class="input-line">
+                    <span class="user">user@devops:~$</span>
+                    <input type="text" id="terminal-input" autofocus autocomplete="off">
+                    <span class="cursor">█</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
