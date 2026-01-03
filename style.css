@@ -1,0 +1,394 @@
+/* 
+  Terminal/DevOps Portfolio Styles
+  Theme: Ubuntu Terminal / Hacker Theme
+*/
+
+:root {
+    --bg-color: #2c001e;
+    /* Ubuntu Terminal Background */
+    --window-bg: #300a24;
+    --text-color: #ffffff;
+    --prompt-color: #4e9a06;
+    /* Green */
+    --path-color: #3465a4;
+    /* Blue */
+    --cmd-color: #eeeeec;
+    --cursor-color: #ffffff;
+    --highlight: #fce94f;
+    --border-color: #555;
+    --font-stack: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    font-family: var(--font-stack);
+    color: var(--text-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Terminal Window */
+.terminal-window {
+    width: 90%;
+    max-width: 1000px;
+    height: 85vh;
+    background-color: var(--window-bg);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #444;
+}
+
+/* Header / Title Bar */
+.terminal-header {
+    background-color: #3d3b3b;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #222;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+    margin-right: 20px;
+}
+
+.btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.btn-red {
+    background: #ff5f56;
+}
+
+.btn-yellow {
+    background: #ffbd2e;
+}
+
+.btn-green {
+    background: #27c93f;
+}
+
+.title {
+    color: #ccc;
+    font-size: 0.9rem;
+    flex-grow: 1;
+    text-align: center;
+    margin-right: 50px;
+    /* balance buttons */
+}
+
+/* Terminal Body */
+.terminal-body {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+    font-size: 1rem;
+    scrollbar-color: #555 var(--window-bg);
+    scrollbar-width: thin;
+}
+
+/* Custom Scrollbar */
+.terminal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: var(--window-bg);
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+/* Navigation / Commands */
+.command-nav {
+    margin-bottom: 2rem;
+    border-bottom: 1px dashed #555;
+    padding-bottom: 1rem;
+}
+
+.comment {
+    color: #729fcf;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.cmd-link {
+    color: var(--highlight);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.cmd-link::before {
+    content: '[ ';
+    color: #555;
+}
+
+.cmd-link::after {
+    content: ' ]';
+    color: #555;
+}
+
+.cmd-link:hover {
+    color: #fff;
+    text-shadow: 0 0 5px var(--highlight);
+}
+
+/* Prompt Styles */
+.prompt-line {
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.user {
+    color: var(--prompt-color);
+    font-weight: bold;
+}
+
+.command {
+    color: var(--cmd-color);
+    margin-left: 0.5rem;
+}
+
+.command-output {
+    margin-left: 1rem;
+    color: #d3d7cf;
+    line-height: 1.6;
+}
+
+/* ASCII Art */
+.ascii-art {
+    font-size: 0.6rem;
+    line-height: 1;
+    color: #ad7fa8;
+    margin-bottom: 1rem;
+    white-space: pre;
+}
+
+/* Sections */
+section {
+    display: none;
+    /* Hidden by default */
+}
+
+section.active-section {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.status {
+    margin-bottom: 1rem;
+}
+
+.online {
+    color: var(--prompt-color);
+    font-weight: bold;
+}
+
+.highlight {
+    color: var(--highlight);
+    background: #444;
+    padding: 0 4px;
+}
+
+/* Key-Value Pairs */
+.kv-pair {
+    margin-bottom: 0.2rem;
+}
+
+.key {
+    color: #729fcf;
+    width: 100px;
+    display: inline-block;
+}
+
+.value {
+    color: #dee;
+}
+
+/* File Grid for Skills */
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.file {
+    display: block;
+    padding: 5px;
+}
+
+.file i {
+    margin-right: 5px;
+}
+
+.executable {
+    color: #27c93f;
+}
+
+/* Green */
+.script {
+    color: #ffbd2e;
+}
+
+/* Yellow */
+.text {
+    color: #eeeeec;
+}
+
+/* White */
+.config {
+    color: #ad7fa8;
+}
+
+/* Purple */
+
+/* Project List */
+.project-item {
+    margin-bottom: 1rem;
+}
+
+.timestamp {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.project-name {
+    color: #3465a4;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.project-desc {
+    color: #888;
+}
+
+/* Interactive Input */
+.input-line {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    color: var(--cursor-color);
+    font-family: inherit;
+    font-size: inherit;
+    width: 60%;
+    margin-left: 0.5rem;
+    outline: none;
+    caret-color: transparent;
+    /* Custom cursor handles this */
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+    margin-left: -1px;
+    /* Overlap input caret position if possible, though caret hidden */
+    pointer-events: none;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Contact Form */
+.terminal-form .input-group {
+    margin-bottom: 0.5rem;
+}
+
+.terminal-form label {
+    color: #729fcf;
+    width: 80px;
+    display: inline-block;
+}
+
+.terminal-form input,
+.terminal-form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #555;
+    color: #fff;
+    font-family: inherit;
+    padding: 2px 5px;
+    width: 300px;
+}
+
+.terminal-form input:focus,
+.terminal-form textarea:focus {
+    outline: none;
+    border-bottom-color: var(--highlight);
+}
+
+.form-hint {
+    color: #555;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .terminal-window {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .ascii-art {
+        font-size: 0.4rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .terminal-form input,
+    .terminal-form textarea {
+        width: 100%;
+    }
+}
